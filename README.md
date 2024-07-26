@@ -1,4 +1,4 @@
-# BattleBitDMACheat
+# BattleBitDMACheat (README OUTDATED, DONT FEEL LIKE UPDATING)
 
 _Video has been copyright striked_<br>
 <a href="https://youtu.be/M43x70ikBl0">
