@@ -102,6 +102,12 @@
     <ClCompile Include="Misc\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Esp\PlayerEsp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Kmbox\Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Misc\Pch\Pch.h">
@@ -198,6 +204,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Security\XorStr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\ConfigInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\PlayerConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Esp\PlayerEsp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Kmbox\Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Kmbox\Excluded.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Kmbox\Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

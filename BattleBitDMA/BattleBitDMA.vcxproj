@@ -119,7 +119,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\Config;$(SolutionDir)$(ProjectName)\Graphics\start up;$(SolutionDir)$(ProjectName)\Esp;$(SolutionDir)$(ProjectName)\Graphics\entities;$(SolutionDir)$(ProjectName)\Graphics\utility;$(SolutionDir)$(ProjectName)\Graphics;$(SolutionDir)$(ProjectName)\Security;$(SolutionDir)$(ProjectName)\SDK;$(SolutionDir)$(ProjectName)\Misc\Pch;$(SolutionDir)$(ProjectName)\Memory;$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\Misc;$(SolutionDir)$(ProjectName)\Sockets;$(SolutionDir)$(ProjectName)\ESP;$(SolutionDir)$(ProjectName)\json</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\Aimbot;$(SolutionDir)$(ProjectName)\Kmbox;$(SolutionDir)$(ProjectName)\Config;$(SolutionDir)$(ProjectName)\Graphics\start up;$(SolutionDir)$(ProjectName)\Esp;$(SolutionDir)$(ProjectName)\Graphics\entities;$(SolutionDir)$(ProjectName)\Graphics\utility;$(SolutionDir)$(ProjectName)\Graphics;$(SolutionDir)$(ProjectName)\Security;$(SolutionDir)$(ProjectName)\SDK;$(SolutionDir)$(ProjectName)\Misc\Pch;$(SolutionDir)$(ProjectName)\Memory;$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\Misc;$(SolutionDir)$(ProjectName)\Sockets;$(SolutionDir)$(ProjectName)\ESP;$(SolutionDir)$(ProjectName)\json</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -168,6 +168,7 @@
     <ClCompile Include="Graphics\Utility\Animation.cpp" />
     <ClCompile Include="Graphics\Utility\Colour.cpp" />
     <ClCompile Include="Graphics\Utility\Font.cpp" />
+    <ClCompile Include="Kmbox\Manager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Memory\Memory.cpp" />
     <ClCompile Include="Misc\CheatFunction.cpp" />
@@ -205,6 +206,9 @@
     <ClInclude Include="Graphics\Utility\Animation.h" />
     <ClInclude Include="Graphics\Utility\Colour.h" />
     <ClInclude Include="Graphics\Utility\Font.h" />
+    <ClInclude Include="Kmbox\Config.h" />
+    <ClInclude Include="Kmbox\Excluded.h" />
+    <ClInclude Include="Kmbox\Manager.h" />
     <ClInclude Include="Misc\CheatFunction.h" />
     <ClInclude Include="Memory\Memory.h" />
     <ClInclude Include="Misc\Input.h" />

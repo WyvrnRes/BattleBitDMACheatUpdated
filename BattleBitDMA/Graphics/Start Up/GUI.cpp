@@ -28,23 +28,27 @@ D2D1::ColorF ColourPick = Colour(0, 150, 255, 255);
 void CreateGUI()
 {
 	MenuEntity = std::make_shared<Container>();
-	auto form = std::make_shared<Form>(100, 100.0f, 300, 200, 2, 30, LIT(L"Cool Hack"), false);
+	auto form = std::make_shared<Form>(100, 100.0f, 300, 400, 2, 30, LIT(L"Battlebit DMA Modified - Res :3"), false);
 	{
 		auto health = std::make_shared<Toggle>(10, 10, LIT(L"Health"), &ConfigInstance.Player.Health);
 		auto colourpicker = std::make_shared<ColourPicker>(80, 10, &ConfigInstance.Player.TextColour);
 		auto distance = std::make_shared<Toggle>(10, 30, LIT(L"Distance"), &ConfigInstance.Player.Distance);
 		auto primary = std::make_shared<Toggle>(10, 50, LIT(L"Primary Weapon"), &ConfigInstance.Player.PrimaryWeapon);
-		auto secondary = std::make_shared<Toggle>(10, 70, LIT(L"Secondary Weapon"), &ConfigInstance.Player.SecondaryWeapon);
+		auto circle = std::make_shared<Toggle>(10, 70, LIT(L"Circle"), &ConfigInstance.Player.Circle);
 		auto maxdistance = std::make_shared<Slider<int>>(10, 90,150, LIT(L"Max Distance"),LIT(L"m"), 0, 1500, &ConfigInstance.Player.MaxDistance);
 		auto fontsize = std::make_shared<Slider<int>>(10, 115,150, LIT(L"Font Size"),LIT(L"px"), 1, 16, &ConfigInstance.Player.FontSize);
-		auto info = std::make_shared<Label>(LIT(L"WinKey + Shift + Arrow To Change Monitor"), 10, 140);
+		auto circlesize = std::make_shared<Slider<int>>(10, 140, 150, LIT(L"Circle Size"),LIT(L"px"), 1, 16, & ConfigInstance.Player.CircleSize);
+		auto transparent = std::make_shared<Toggle>(10, 170, LIT(L"Transparency"), &ConfigInstance.Player.Transparent);
+		auto info = std::make_shared<Label>(LIT(L"WinKey + Shift + Arrow To Change Monitor"), 10, 350);
 		form->Push(health);
 		form->Push(colourpicker);
 		form->Push(distance);
 		form->Push(primary);
-		form->Push(secondary);
+		form->Push(circle);
 		form->Push(maxdistance);
 		form->Push(fontsize);
+		form->Push(circlesize);
+		form->Push(transparent);
 		form->Push(info);
 
 
@@ -55,6 +59,19 @@ void CreateGUI()
 	MenuEntity->Draw();
 	MenuEntity->Update();
 }
+
+void SetWindowAttributes(HWND hWnd, bool Transparent)
+{
+	SetWindowPos(hWnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+
+	if (Transparent == false)
+		SetLayeredWindowAttributes(hWnd, RGB(0, 0, 0), 255, LWA_ALPHA);
+	else
+	{
+		SetLayeredWindowAttributes(hWnd, RGB(0, 0, 0), 0, LWA_COLORKEY);
+	}
+}
+
 
 void SetFormPriority()
 {

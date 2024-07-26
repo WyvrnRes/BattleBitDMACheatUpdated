@@ -4,6 +4,7 @@
 #include "GUI.h"
 #include "Globals.h"
 #include "PlayerEsp.h"
+
 ID2D1Factory* Factory;
 IDWriteFactory* FontFactory;
 ID2D1HwndRenderTarget* RenderTarget;

@@ -22,12 +22,12 @@ private:
 	uint32_t HitboxSize = 0x18;
 
 	uint64_t PrimaryWeapon = 0x198; // just look for AWeapon in playernetworkstate, top one is primary, second one is secondary
-	uint64_t SecondaryWeapon = 0x1A0;
+	//uint64_t SecondaryWeapon = 0x1A0;
 	uint64_t CacheName = 0xD8; //	private string mCacheName;
 	uint64_t PrimaryCacheName = 0;
-	uint64_t SecondaryCacheName = 0;
+	//uint64_t SecondaryCacheName = 0;
 	wchar_t PrimaryWeaponName[36] = { '\0' };
-	wchar_t SecondaryWeaponName[36] = { '\0' };
+	//wchar_t SecondaryWeaponName[36] = { '\0' };
 	/*
 	[Token(Token = "0x40017EE")]
 	[FieldOffset(Offset = "0x11C")]
@@ -53,11 +53,8 @@ private:
 	Vector3 Position;
 
 	void UpdatePrimaryWeapon(VMMDLL_SCATTER_HANDLE handle);
-	void UpdateSecondaryWeapon(VMMDLL_SCATTER_HANDLE handle);
 	void UpdatePrimaryWeaponName(VMMDLL_SCATTER_HANDLE handle);
-	void UpdateSecondaryWeaponName(VMMDLL_SCATTER_HANDLE handle);
 	void UpdatePrimaryCacheName(VMMDLL_SCATTER_HANDLE handle);
-	void UpdateSecondaryCacheName(VMMDLL_SCATTER_HANDLE handle);
 	void UpdateHitboxes(VMMDLL_SCATTER_HANDLE handle);
 
 
@@ -78,6 +75,5 @@ public:
 	Vector3 GetPosition();
 
 	std::wstring GetPrimaryWeaponName();
-	std::wstring GetSecondaryWeaponName();
 
 };

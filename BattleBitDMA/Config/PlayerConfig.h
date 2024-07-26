@@ -10,13 +10,20 @@ public:
 		ConfigName = name;
 	}
 
-	bool Health = true;
-	bool Distance = true;
-	int MaxDistance = 1000;
-	bool PrimaryWeapon = true;
-	bool SecondaryWeapon = false;
-	D2D1::ColorF TextColour = Colour(255, 255, 255);
-	int FontSize = 11;
+    bool Health = true;
+    bool Distance = true;
+    int MaxDistance = 300;
+    bool PrimaryWeapon = false;
+    bool Circle = true;
+    bool Transparent = false;
+
+    D2D1::ColorF TextColour = Colour(255, 255, 255);
+    D2D1::ColorF CircleColour = Colour(255, 0, 0);
+    int FontSize = 8;
+    int CircleSize = 2;
+    std::string Ip = "192.168.2.188";
+    WORD Port = 10240;
+    std::string Uuid = "793A5C53";
     void ToJsonColour(json* j, const std::string& name, D2D1::ColorF* colour)
     {
         (*j)[ConfigName][name][LIT("r")] = colour->r;
@@ -43,8 +50,13 @@ public:
         j[ConfigName][LIT("Distance")] = Distance;
         j[ConfigName][LIT("MaxDistance")] = MaxDistance;
         j[ConfigName][LIT("FontSize")] = FontSize;
+        j[ConfigName][LIT("CircleSize")] = CircleSize;
         j[ConfigName][LIT("PrimaryWeapon")] = PrimaryWeapon;
-        j[ConfigName][LIT("SecondaryWeapon")] = SecondaryWeapon;
+        j[ConfigName][LIT("Circle")] = Circle;
+        j[ConfigName][LIT("Ip")] = Ip;
+        j[ConfigName][LIT("Port")] = Port;
+        j[ConfigName][LIT("Uuid")] = Uuid;
+        j[ConfigName][LIT("Transparent")] = Transparent;
         ToJsonColour(&j, LIT("TextColour"), &TextColour);
 
         return j;
@@ -59,12 +71,22 @@ public:
             Distance = j[ConfigName][LIT("Distance")];
         if (j[ConfigName].contains(LIT("PrimaryWeapon")))
             PrimaryWeapon = j[ConfigName][LIT("PrimaryWeapon")];
-        if (j[ConfigName].contains(LIT("SecondaryWeapon")))
-            SecondaryWeapon = j[ConfigName][LIT("SecondaryWeapon")];
+        if (j[ConfigName].contains(LIT("Circle")))
+            Circle = j[ConfigName][LIT("Circle")];
         if (j[ConfigName].contains(LIT("FontSize")))
             FontSize = j[ConfigName][LIT("FontSize")];
+        if (j[ConfigName].contains(LIT("CircleSize")))
+            CircleSize = j[ConfigName][LIT("CircleSize")];
         if (j[ConfigName].contains(LIT("MaxDistance")))
             MaxDistance = j[ConfigName][LIT("MaxDistance")];
+        if (j[ConfigName].contains(LIT("Ip")))
+            MaxDistance = j[ConfigName][LIT("Ip")];
+        if (j[ConfigName].contains(LIT("Port")))
+            MaxDistance = j[ConfigName][LIT("Port")];
+        if (j[ConfigName].contains(LIT("Uuid")))
+            MaxDistance = j[ConfigName][LIT("Uuid")];
+        if (j[ConfigName].contains(LIT("Transparent")))
+            MaxDistance = j[ConfigName][LIT("Transparent")];
         FromJsonColour(j, LIT("TextColour"), &TextColour);
     }
 };

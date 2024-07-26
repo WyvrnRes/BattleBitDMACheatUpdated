@@ -6,6 +6,8 @@
 #include "MainCamera.h"
 #include "Init.h"
 #include "GUI.h"
+#include "Manager.h"
+#include "ConfigInstance.h"
 
 
 
@@ -57,7 +59,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	int screenWidth = GetSystemMetrics(SM_CXSCREEN);
 	int screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-	hWnd = CreateWindowEx(WS_EX_APPWINDOW, wc.lpszClassName, L"GUI Framework",
+	hWnd = CreateWindowEx(WS_EX_APPWINDOW | WS_EX_LAYERED, wc.lpszClassName, L"GUI Framework",
 		WS_POPUP,
 		0, 0, screenWidth, screenHeight, NULL, NULL, hInstance, NULL);
 
@@ -65,9 +67,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 
 
-	SetLayeredWindowAttributes(hWnd, RGB(0, 0, 0), 255, LWA_ALPHA);
-
 	ShowWindow(hWnd, nCmdShow);
+
+	Kmbox.KmBoxNetManager::InitDevice(ConfigInstance.Player.Ip, ConfigInstance.Player.Port, ConfigInstance.Player.Uuid);
 
 	InitD2D(hWnd);
 	CreateGUI();
@@ -76,6 +78,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetInput();
 	while (TRUE)
 	{
+		SetWindowAttributes(hWnd, ConfigInstance.Player.Transparent);
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
 			TranslateMessage(&msg);

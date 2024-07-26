@@ -25,9 +25,10 @@ std::shared_ptr<CheatFunction> UpdatePlayers = std::make_shared<CheatFunction>(1
 });
 
 
-
 void DrawPlayers()
 {
+	
+
 	if (CurrentLocalPlayer == nullptr)
 		return;
 	for (auto player : BasePlayer->PlayerList)
@@ -41,20 +42,25 @@ void DrawPlayers()
 
 		Vector3 position = player->GetPlayerNettworkState()->GetPosition();
 		int distance = Vector3::Distance(position, CurrentLocalPlayer->GetPlayerNettworkState()->GetPosition());
-		if(distance > ConfigInstance.Player.MaxDistance)
-					continue;
+		if (distance > ConfigInstance.Player.MaxDistance)
+			continue;
 		Vector2 screenpos = Camera->WorldToScreen(position);
 		if (screenpos == Vector2::Zero())
 			continue;
 
+
 		std::wstring distancestr = ConfigInstance.Player.Distance ? LIT(L"[") + std::to_wstring(distance) + LIT(L"m]") : LIT(L"");
 		std::wstring healthstr = ConfigInstance.Player.Health ? LIT(L"[") + std::to_wstring((int)player->GetPlayerNettworkState()->GetHealth()) + LIT(L"❤]") : LIT(L"");;
 		std::wstring primary = ConfigInstance.Player.PrimaryWeapon ? player->GetPlayerNettworkState()->GetPrimaryWeaponName() : LIT(L"");
-		std::wstring secondary = ConfigInstance.Player.SecondaryWeapon ? player->GetPlayerNettworkState()->GetSecondaryWeaponName() : LIT(L"");
 
-		DrawText(screenpos.x, screenpos.y, distancestr + healthstr, LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
-		DrawText(screenpos.x, screenpos.y + ConfigInstance.Player.FontSize + 2, primary, LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
-		DrawText(screenpos.x, screenpos.y + (ConfigInstance.Player.FontSize*2), secondary, LIT("Verdana"), ConfigInstance.Player.FontSize-1, ConfigInstance.Player.TextColour, FontAlignment::Centre);
+		DrawText(screenpos.x, screenpos.y + (ConfigInstance.Player.FontSize + 2), distancestr, LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
+		DrawText(screenpos.x, screenpos.y + (ConfigInstance.Player.FontSize * 2), healthstr, LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
+		DrawText(screenpos.x, screenpos.y + (ConfigInstance.Player.FontSize * 3), primary, LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
+		if (ConfigInstance.Player.Circle == true)
+			FilledCircle(screenpos.x, screenpos.y, ConfigInstance.Player.CircleSize, ConfigInstance.Player.CircleColour);
+		//DrawText(closestPosition.x, closestPosition.y + (ConfigInstance.Player.FontSize * 4), LIT(L"CLOSEST"), LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
+
+
 	}
 
 }
