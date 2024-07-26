@@ -1,11 +1,11 @@
 # BattleBitDMACheat
 
 ## My Additions
-* -added a transparency toggle
-* -removed secondary weapon (wasnt working im lazy)
-* -added aim dot
-* -made text display better imo
-* -added kmbox net (not doing anything with it yet, only connects)
+* added a transparency toggle
+* removed secondary weapon (wasnt working im lazy)
+* added aim dot
+* made text display better imo
+* added kmbox net (not doing anything with it yet, only connects)
 
 ## Instructions
 * [Installation Guide](./Instructions.md)
