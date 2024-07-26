@@ -1,14 +1,11 @@
-# BattleBitDMACheat (README OUTDATED, DONT FEEL LIKE UPDATING)
+# BattleBitDMACheat
 
-_Video has been copyright striked_<br>
-<a href="https://youtu.be/M43x70ikBl0">
-  <img src="https://github.com/IntelSDM/BattleBitDMACheat/assets/86087830/e1c5b3fa-a4e4-4329-8362-27ea7a5590aa" alt="Play Video" width="700" height="400">
-</a>
-
-<p align="Left">
-  <img src="https://github.com/IntelSDM/BattleBitDMACheat/assets/86087830/49f74204-6370-4585-80fe-626bcde6d5ad"
-    style="width: 35%;" />
-</p>
+## My Additions
+* -added a transparency toggle
+* -removed secondary weapon (wasnt working im lazy)
+* -added aim dot
+* -made text display better imo
+* -added kmbox net (not doing anything with it yet, only connects)
 
 ## Instructions
 * [Installation Guide](./Instructions.md)
