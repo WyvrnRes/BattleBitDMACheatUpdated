@@ -12,10 +12,13 @@
 
 ## Features
 * Player Esp
+* Line Esp
+* Aim Dot
 * Player Distance
 * Player Health
 * Player Primary Weapon
-* Player Secondary Weapon
+* Transparency
+* ~~Player Secondary Weapon~~
 
 ## Credits
 * [PCILeech](https://github.com/ufrisk/pcileech)
