@@ -58,6 +58,8 @@ void DrawPlayers()
 		DrawText(screenpos.x, screenpos.y + (ConfigInstance.Player.FontSize * 3), primary, LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
 		if (ConfigInstance.Player.Circle == true)
 			FilledCircle(screenpos.x, screenpos.y, ConfigInstance.Player.CircleSize, ConfigInstance.Player.CircleColour);
+		if (ConfigInstance.Player.Lines == true)
+			FilledLine(lineBottomX, lineBottomX, screenpos.x, screenpos.y, 1, ConfigInstance.Player.TextColour);
 		//DrawText(closestPosition.x, closestPosition.y + (ConfigInstance.Player.FontSize * 4), LIT(L"CLOSEST"), LIT("Verdana"), ConfigInstance.Player.FontSize, ConfigInstance.Player.TextColour, FontAlignment::Centre);
 
 

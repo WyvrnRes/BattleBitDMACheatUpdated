@@ -16,6 +16,7 @@ public:
     bool PrimaryWeapon = false;
     bool Circle = true;
     bool Transparent = false;
+    bool Lines = false;
 
     D2D1::ColorF TextColour = Colour(255, 255, 255);
     D2D1::ColorF CircleColour = Colour(255, 0, 0);
@@ -57,6 +58,7 @@ public:
         j[ConfigName][LIT("Port")] = Port;
         j[ConfigName][LIT("Uuid")] = Uuid;
         j[ConfigName][LIT("Transparent")] = Transparent;
+        j[ConfigName][LIT("Lines")] = Lines;
         ToJsonColour(&j, LIT("TextColour"), &TextColour);
 
         return j;
@@ -87,6 +89,8 @@ public:
             MaxDistance = j[ConfigName][LIT("Uuid")];
         if (j[ConfigName].contains(LIT("Transparent")))
             MaxDistance = j[ConfigName][LIT("Transparent")];
+        if (j[ConfigName].contains(LIT("Lines")))
+            MaxDistance = j[ConfigName][LIT("Lines")];
         FromJsonColour(j, LIT("TextColour"), &TextColour);
     }
 };

@@ -39,6 +39,7 @@ void CreateGUI()
 		auto fontsize = std::make_shared<Slider<int>>(10, 115,150, LIT(L"Font Size"),LIT(L"px"), 1, 16, &ConfigInstance.Player.FontSize);
 		auto circlesize = std::make_shared<Slider<int>>(10, 140, 150, LIT(L"Circle Size"),LIT(L"px"), 1, 16, & ConfigInstance.Player.CircleSize);
 		auto transparent = std::make_shared<Toggle>(10, 170, LIT(L"Transparency"), &ConfigInstance.Player.Transparent);
+		auto lines = std::make_shared<Toggle>(10, 200, LIT(L"Lines"), &ConfigInstance.Player.Lines);
 		auto info = std::make_shared<Label>(LIT(L"WinKey + Shift + Arrow To Change Monitor"), 10, 350);
 		form->Push(health);
 		form->Push(colourpicker);
@@ -49,6 +50,7 @@ void CreateGUI()
 		form->Push(fontsize);
 		form->Push(circlesize);
 		form->Push(transparent);
+		form->Push(lines);
 		form->Push(info);
 
 
