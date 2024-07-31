@@ -1,4 +1,4 @@
-# BattleBitDMACheat - My Discord - _re5
+# BattleBitDMACheat - My Discord: _re5
 
 ## My Additions
 * added a transparency toggle
