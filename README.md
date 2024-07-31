@@ -6,6 +6,7 @@
 * added aim dot
 * made text display better imo
 * added kmbox net (not doing anything with it yet, only connects)
+* added lines
 
 ## Instructions
 * [Installation Guide](./Instructions.md)
