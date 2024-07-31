@@ -28,7 +28,7 @@ D2D1::ColorF ColourPick = Colour(0, 150, 255, 255);
 void CreateGUI()
 {
 	MenuEntity = std::make_shared<Container>();
-	auto form = std::make_shared<Form>(100, 100.0f, 300, 400, 2, 30, LIT(L"Battlebit DMA Modified - Res :3"), false);
+	auto form = std::make_shared<Form>(100, 100.0f, 300, 400, 2, 30, LIT(L"Battlebit DMA - Res :3"), false);
 	{
 		auto health = std::make_shared<Toggle>(10, 10, LIT(L"Health"), &ConfigInstance.Player.Health);
 		auto colourpicker = std::make_shared<ColourPicker>(80, 10, &ConfigInstance.Player.TextColour);
