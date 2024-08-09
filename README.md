@@ -5,6 +5,7 @@
 # PLEASE NOTE!!!
 * You MUST start the cheat while inside of a match and spawned in!
 * You MUST add your Kmbox Net's IP/PORT/UUID inside of the PlayerConfig.h
+* CONFIG SYSTEM DOES NOT WORK RIGHT NOW
 
 ## My Additions
 * added a transparency toggle
