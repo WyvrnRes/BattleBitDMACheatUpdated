@@ -27,3 +27,4 @@
 * [MemProcFS](https://github.com/ufrisk/MemProcFS)
 * [IL2CPP Dumper](https://github.com/Perfare/Il2CppDumper)
 * [DMALibrary](https://github.com/Metick/DMALibrary/tree/Master)
+* [GR33N <3](https://github.com/IntelSDM)
