@@ -199,7 +199,7 @@ bool Memory::Init(std::string process_name, bool memMap, bool debug)
 		DMA_INITIALIZED = TRUE;
 	}
 	else
-		LOG("DMA already initialized!\n");
+		LOG("");
 
 	if (PROCESS_INITIALIZED)
 	{
@@ -210,7 +210,7 @@ bool Memory::Init(std::string process_name, bool memMap, bool debug)
 	this->current_process.PID = GetPidFromName(process_name);
 	if (!this->current_process.PID)
 	{
-		LOG("[!] Could not get PID from name!\n");
+		LOG("");
 		return false;
 	}
 	this->current_process.process_name = process_name;
@@ -802,9 +802,10 @@ void Memory::ExecuteReadScatter(VMMDLL_SCATTER_HANDLE handle, int pid)
 	if (pid == 0)
 		pid = this->current_process.PID;
 
-	if (!VMMDLL_Scatter_ExecuteRead(handle))
+	while (!VMMDLL_Scatter_ExecuteRead(handle))
 	{
-		LOG("[-] Failed to Execute Scatter Read\n");
+		LOG("[-] Failed to Execute Scatter Read... Are you in a match?\n");
+		Sleep(2000);
 	}
 	//Clear after using it
 	if (!VMMDLL_Scatter_Clear(handle, pid, VMMDLL_FLAG_NOCACHE))

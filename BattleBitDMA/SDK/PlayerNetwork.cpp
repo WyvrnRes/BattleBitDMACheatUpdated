@@ -1,6 +1,7 @@
 #include "Pch.h"
 #include "PlayerNetwork.h"
 #include "globals.h"
+#include "ConfigInstance.h"
 
 PlayerNetwork::PlayerNetwork(uint64_t address)
 {
@@ -14,6 +15,7 @@ void PlayerNetwork::InitializePlayerList()
 	FastList = TargetProcess.Read<uint64_t>(StaticField + FastList);
 	printf("FastList: 0x%llX\n", FastList);
 }
+
 void PlayerNetwork::CachePlayers()
 {
 	
@@ -74,7 +76,6 @@ void PlayerNetwork::CachePlayers()
 	}
 	TargetProcess.ExecuteReadScatter(handle);
 	TargetProcess.CloseScatterHandle(handle);
-
 
 }
 

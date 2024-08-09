@@ -28,6 +28,10 @@ protected:
 
 public:
     DropDown(float x, float y, std::wstring text, int* items, std::vector<std::wstring>names);
+    int GetSelectedIndex() const {
+        return *Index;
+    }
+
     void Update();
     void Draw();
 };

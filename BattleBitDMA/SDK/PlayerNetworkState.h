@@ -16,6 +16,7 @@ private:
 	uint64_t Friendly = 0xC8;
 	uint64_t Hitboxes = 0x110; // 	public \u0306\u0308\u0305\u0305\u0304\u0302\u0304\u0301\u0308\u0304\u0305\u0303\u0305\u0302\u0307[] \u0301\u0306\u0305\u0302\u0308\u0307\u0307\u0305\u0304\u0308\u0305\u0307\u0305\u0304\u0305; 
 	// look for an array of a class containing an enum, matrix4x4,transform, boxcollider and another class
+	uint64_t PositionOffset = 0x128; // 0x11C
 	std::vector<Hitbox> HitboxList;
 	uint64_t HitboxEnum = 0x38; // public \u0307\u0307\u0302\u0304\u0301\u0301\u0307\u0308\u0308\u0308\u0307\u0306\u0308\u0303\u0301 \u0302\u0308\u0305\u0307\u0306\u0304\u0304\u0303\u0306\u0305\u0307\u0302\u0301\u0308\u0304;
 	uint64_t HitboxTransform = 0x58; // 	public Transform \u0307\u0303\u0301\u0305\u0304\u0305\u0307\u0304\u0305\u0306\u0307\u0307\u0305\u0306\u0305;
@@ -44,7 +45,6 @@ private:
 	public Vector3 \u0307\u0303\u0307\u0304\u0302\u0308\u0305\u0304\u0306\u0305\u0304\u0302\u0306\u0308\u0304;
 	Looking for 3 vectors in a row
 	*/
-	uint64_t PositionOffset = 0x128; // 0x11C
 
 	bool IsConnected = false;
 	float CurrentHealth = 0;

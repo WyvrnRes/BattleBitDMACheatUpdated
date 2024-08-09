@@ -11,6 +11,7 @@ public:
 	{
 		json jsoned;
 		jsoned.merge_patch(Player.ToJson());
+		return jsoned;
 	}
 
 	void FromJson(json jsoned)

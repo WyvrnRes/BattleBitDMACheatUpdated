@@ -4,6 +4,9 @@
 #include "GUI.h"
 #include "Globals.h"
 #include "PlayerEsp.h"
+#include "Aimbot.h"
+#include "Manager.h"
+#include "InputManager.h"
 
 ID2D1Factory* Factory;
 IDWriteFactory* FontFactory;
@@ -33,6 +36,7 @@ void InitD2D(HWND hWnd)
 	CreateFonts("VerdanaBold", LIT(L"Verdana"), 10, DWRITE_FONT_WEIGHT_SEMI_BOLD);
 	RenderTarget->CreateSolidColorBrush(D2D1::ColorF(0, 0, 0, 0), &Brush); // create global brush
 	RenderTarget->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_GRAYSCALE); // set aa mode
+	Keyboard::InitKeyboard();
 }
 std::shared_ptr<CheatFunction> UpdateViewMatrix = std::make_shared<CheatFunction>(5, []() {
 	Camera->UpdateViewMatrix();
@@ -124,5 +128,6 @@ void RenderFrame()
 	RenderTarget->SetTransform(D2D1::Matrix3x2F::Identity()); // set new transform
 	DrawPlayers();
 	Render();
+	Aimbot();
 	RenderTarget->EndDraw();
 }
