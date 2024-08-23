@@ -1,6 +1,6 @@
 # BattleBitDMACheat
 
-* My Discord: _re5
+* My Discord: wyvrnres_
 
 # PLEASE NOTE!!!
 * You MUST start the cheat while inside of a match and spawned in!
